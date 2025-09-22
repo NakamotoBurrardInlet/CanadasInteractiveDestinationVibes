@@ -1,0 +1,118 @@
+/* --- General & Animated Background --- */
+:root {
+    --primary-color: #0d1b2a;
+    --secondary-color: #1b263b;
+    --accent-color: #415a77;
+    --text-color: #e0e1dd;
+    --highlight-color: #ff4d6d;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    background: linear-gradient(-45deg, #023e8a, #0077b6, #0096c7, #48cae4);
+    background-size: 400% 400%;
+    animation: gradientBG 20s ease infinite;
+    margin: 0;
+    line-height: 1.6;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* --- Layout & Typography --- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+}
+
+header {
+    text-align: center;
+    padding: 2rem 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+h2 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--highlight-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* --- Interactive Map --- */
+.map-container {
+    background-color: var(--secondary-color);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    margin-bottom: 3rem;
+}
+
+#map {
+    height: 500px;
+    width: 100%;
+    border-radius: 10px;
+    border: 3px solid var(--accent-color);
+}
+
+/* --- Destination Cards Grid --- */
+.destinations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background-color: var(--primary-color);
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 5px solid var(--highlight-color);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+.card h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.card .description {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.card .price {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.card .price span {
+    color: var(--highlight-color);
+    font-weight: 700;
+}
