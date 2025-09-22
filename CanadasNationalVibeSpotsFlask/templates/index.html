@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<section class="map-container">
+    <h2>Interactive Destination Map</h2>
+    <div id="map"></div>
+</section>
+
+<section class="destinations-grid">
+    {% for destination in destinations %}
+    <div class="card">
+        <h3>{{ destination.name }}</h3>
+        <p class="description">{{ destination.description }}</p>
+        <p class="price">Average Hotel Price: <span>${{ destination.avg_hotel_price }}/night</span></p>
+    </div>
+    {% endfor %}
+</section>
+
+{% endblock %}
